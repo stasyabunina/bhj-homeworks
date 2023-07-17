@@ -20,8 +20,13 @@ btn.forEach(item => {
 
             link.addEventListener('click', () => {
                 selectedBtn.textContent = link.textContent;
-                return false;
             })
         })
     })
 });
+
+links.forEach((e) => {
+    e.onclick = function () {
+        return false;
+    };
+})
