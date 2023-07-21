@@ -20,6 +20,12 @@ btn.forEach(item => {
 
             link.addEventListener('click', () => {
                 selectedBtn.textContent = link.textContent;
+
+                function hide() {
+                    dropdown.classList.remove('dropdown__list_active')
+                }
+        
+                hide() 
             })
         })
     })
