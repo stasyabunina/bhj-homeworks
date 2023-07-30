@@ -44,11 +44,7 @@ btns.forEach((btn) => {
             `<img class="cart__product-image" src="${btn.closest('.product').querySelector('img').src}">
             <div class="cart__product-count">${count}</div>`;
             product.insertAdjacentHTML('afterBegin', html);
-
-            // product.querySelector('.cart__product-count').textContent = count;
-            // console.log(product.querySelector('.cart__product-count').textContent)
         } else {
-            // return false
             const quantity = btn.closest('.product').querySelector('.product__quantity-value');
             let count = Number(quantity.textContent);
 
