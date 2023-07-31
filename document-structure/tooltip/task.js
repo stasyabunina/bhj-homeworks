@@ -8,18 +8,19 @@ links.forEach((link) => {
         tooltip.className = 'tooltip';
 
         tooltip.innerText = link.getAttribute('title');
-        let coordinatesParent = link.getBoundingClientRect();
-        tooltip.style.top = coordinatesParent.bottom + 'px';
-        tooltip.style.left = coordinatesParent.left + 'px';
-        link.appendChild(tooltip);
-        tooltip.classList.add('tooltip_active')
+        let coordinatesLink = link.getBoundingClientRect();
+        tooltip.style.top = coordinatesLink.bottom + 'px';
+        tooltip.style.left = coordinatesLink.left + 'px';
+        link.after(tooltip);
 
         let tooltips = document.querySelectorAll('.tooltip');
-        let currentTooltip = link.querySelector('.tooltip');
+        let currentTooltip = link.nextElementSibling;
         tooltips.forEach(tooltip => {
             if (tooltip != currentTooltip) {
                 tooltip.remove();
             }
         });
+
+        currentTooltip.classList.toggle('tooltip_active');
     })
 })

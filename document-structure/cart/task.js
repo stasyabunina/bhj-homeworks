@@ -48,7 +48,7 @@ btns.forEach((btn) => {
             const quantity = btn.closest('.product').querySelector('.product__quantity-value');
             let count = Number(quantity.textContent);
 
-            currentProduct.querySelector('.cart__product-count').textContent = count;
+            currentProduct.querySelector('.cart__product-count').textContent = Number(currentProduct.querySelector('.cart__product-count').textContent) + count;
         }
     })
 })
