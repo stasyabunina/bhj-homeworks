@@ -21,6 +21,8 @@ links.forEach((link) => {
             }
         });
 
-        currentTooltip.classList.toggle('tooltip_active');
+        if (currentTooltip.textContent = link.title) {
+            currentTooltip.classList.toggle('tooltip_active');
+        }
     })
 })
